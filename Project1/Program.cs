@@ -12,24 +12,11 @@ namespace Project1
     {
         static void Main(string[] args)
         {
-            Book book1 = new Book()
-            {
-                name = "Harry Potter",
-                type = "Book",
-                Author = "J.K. Rowling",
-                NumPages = "500"
-            };
 
-            Movie movie1 = new Movie()
-            {
-                name = "Interstellar",
-                type = "Movie",
-                Director = "A Guy",
-                Length = "3 hours"
-            };
+            List<Book> books = new List<Book>();
+            List<Movie> movies = new List<Movie>();
 
-            List<Item> inventory = new List<Item>();
-            inventory.Add(new Book()
+            books.Add(new Book()
             {
                 name = "Harry Potter",
                 type = "Book",
@@ -37,9 +24,16 @@ namespace Project1
                 NumPages = "500"
             });
 
+            movies.Add(new Movie()
+            {
+                name = "Interstellar",
+                type = "Movie",
+                Director = "A Guy",
+                Length = "3 hours"
+            });
+
             string choice = "";
             int exit = 1;
-
 
             Console.WriteLine("Welcome to your media library. What would you like to do?");
             while (exit == 1)
@@ -75,7 +69,7 @@ namespace Project1
                         Console.WriteLine("How many pages are in the book?");
                         numpages = Console.ReadLine();
 
-                        inventory.Add(new Book()
+                        books.Add(new Book()
                         {
                             name = name,
                             type = type,
@@ -92,7 +86,7 @@ namespace Project1
                         Console.WriteLine("How long is the movie?");
                         length = Console.ReadLine();
 
-                        inventory.Add(new Movie()
+                        movies.Add(new Movie()
                         {
                             name = name,
                             type = type,
@@ -110,7 +104,22 @@ namespace Project1
                 }
                 else if (a == 1)
                 {
-                    inventory.ForEach(Item => Console.Write(Item));
+                    
+                    foreach(Book i in books)
+                    {
+                        Console.WriteLine("Name: " + i.name);
+                        Console.WriteLine("Type: " +i.type);
+                        Console.WriteLine("Author: " + i.Author);
+                        Console.WriteLine("Number of Pages: " + i.NumPages);
+                    }
+
+                    foreach (Movie i in movies)
+                    {
+                        Console.WriteLine("Name: " + i.name);
+                        Console.WriteLine("Type: " + i.type);
+                        Console.WriteLine("Director: " + i.Director);
+                        Console.WriteLine("Length: " + i.Length);
+                    }
 
                 }
                 else if (a == 2)
@@ -122,7 +131,6 @@ namespace Project1
 
                     amount = Convert.ToInt32(b);
 
-                    book1.Sell(amount);
                 }
                 else if (a == 3)
                 {
@@ -132,9 +140,7 @@ namespace Project1
                     b = Console.ReadLine();
 
                     amount = Convert.ToInt32(b);
-
-                    book1.Restock(amount);
-
+           
                 }
                 else if ( a == 4)
                 {
