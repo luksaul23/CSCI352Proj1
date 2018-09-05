@@ -10,6 +10,7 @@ namespace Project1
     {
         private string Name;
         private string Type;
+        public int Supply = 0;
 
         public abstract void Restock(int amount);
         public abstract void Sell(int amount);
@@ -25,6 +26,7 @@ namespace Project1
         {
             Name = name;
             Type = type;
+            Supply++;
         }
 
         public string name

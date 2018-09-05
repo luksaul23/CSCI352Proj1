@@ -14,7 +14,7 @@ namespace Project1
 
         public override void Info()
         {
-            Console.WriteLine("Name: {0}\nType: {1}\nAuthor: {2}\nNumber of Pages: {3}\nSupply:{4}",
+            Console.WriteLine("Name: {0}\nType: {1}\nAuthor: {2}\nNumber of Pages: {3}\nSupply: {4}",
                 name, type, Author, NumPages, Supply);
         }
 

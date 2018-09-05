@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace Project1
 {
-    class Movie : Item
+    class Magazine : Item
     {
+        public string Month;
+        public string MainStor;
 
-        public string Director;
-        public string Length;
         public override void Info()
         {
-            Console.WriteLine("Name: {0}\n\nDirector: {1}\nLength: {2}\nSupply: {3}\n",
-                 name, Director, Length, Supply);
+            Console.WriteLine("Name: {0}\nMonth: {1}\nMain Story:{2}\nSupply: {3}\n",
+                name, Month, MainStor, Supply);
         }
 
         public override void Restock(int amount)
